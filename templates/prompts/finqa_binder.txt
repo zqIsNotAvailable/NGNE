@@ -1,0 +1,204 @@
+Generate answer given the question and table and the pre text and the post text to answer the question correctly.
+
+pre text: the fair value for these options was estimated at the date of grant using a black-scholes option pricing model with the following weighted-average assumptions for 2006 , 2005 and 2004: .
+post text: the black-scholes option valuation model was developed for use in estimating the fair value of traded options which have no vesting restrictions and are fully transferable . in addition , option valuation models require the input of highly subjective assumptions , including the expected stock price volatility, because the company 2019s employee stock options have characteristics significantly different from those of traded options , and because changes in the subjective input assumptions can materially affect the fair value estimate , in management 2019s opinion , the existing models do not necessarily provide a reliable single measure of the fair value of its employee stock options . the total fair value of shares vested during 2006 , 2005 , and 2004 was $ 9413 , $ 8249 , and $ 6418 respectively. the aggregate intrinsic values of options outstanding and exercisable at december 30 , 2006 were $ 204.1 million and $ 100.2 million , respectively. the aggregate intrinsic value of options exercised during the year ended december 30 , 2006 was $ 42.8 million. aggregate intrinsic value represents the positive difference between the company 2019s closing stock price on the last trading day of the fiscal period , which was $ 55.66 on december 29 , 2006 , and the exercise price multiplied by the number of options outstanding. as of december 30 , 2006 , there was $ 64.2 million of total unrecognized compensation cost related to unvested share-based compensation awards granted to employees under the option plans. that cost is expected to be recognized over a period of five years. employee stock purchase plan the shareholders also adopted an employee stock purchase plan ( espp ). up to 2000000 shares of common stock have been reserved for the espp. shares will be offered to employees at a price equal to the lesser of 85% ( 85 % ) of the fair market value of the stock on the date of purchase or 85% ( 85 % ) of the fair market value on the enrollment date. the espp is intended to qualify as an 201cemployee stock purchase plan 201d under section 423 of the internal revenue code. during 2006 , 2005 , and 2004 , 124693 , 112798 , and 117900 shares were purchased under the plan for a total purchase price of $ 3569 , $ 2824 , and $ 2691 , respectively. at december 30 , 2006 , approximately 1116811 shares were available for future issuance.
+CREATE TABLE GRMN/2006/page_91.pdf(
+	row_id int,
+	name text,
+	2006 text,
+	2005 text,
+	2004 text,
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	name	2006	2005	2004
+0	weighted average fair value of options granted $ 20.01 $ 9.48 $ 7.28
+1	expected volatility 0.3534 0.3224 0.3577
+2	distribution yield 1.00%(1.00 %) 0.98%(0.98 %) 1.30%(1.30 %)
+3	expected life of options in years 6.3 6.3 6.3
+4	risk-free interest rate 5%(5 %) 4%(4 %) 4%(4 %)
+*/
+Q: considering the weighted average fair value of options , what was the decrease between shares that vested in 2006 and 2005?
+A: 9431 / 20.01 - 8249 / 9.48 = -400
+
+
+pre text: performance graph the performance graph below shows the five-year cumulative total stockholder return on applied common stock during the period from october 25 , 2009 through october 26 , 2014 . this is compared with the cumulative total return of the standard & poor 2019s 500 stock index and the rdg semiconductor composite index over the same period .the comparison assumes $ 100 was invested on october 25 , 2009 in applied common stock and in each of the foregoing indices and assumes reinvestment of dividends , if any. dollar amounts in the graph are rounded to the nearest whole dollar .the performance shown in the graph represents past performance and should not be considered an indication of future performance .comparison of 5 year cumulative total return* among applied materials , inc. , the s&p 500 index 201cs&p 201d is a registered trademark of standard & poor 2019s financial services llc , a subsidiary of the mcgraw-hill companies , inc.
+post text: dividends during fiscal 2014 , applied 2019s board of directors declared four quarterly cash dividends of $ 0.10 per share each .during fiscal 2013 , applied 2019s board of directors declared three quarterly cash dividends of $ 0.10 per share each and one quarterly cash dividend of $ 0.09 per share .during fiscal 2012 , applied 2019s board of directors declared three quarterly cash dividends of $ 0.09 per share each and one quarterly cash dividend of $ 0.08 .dividends declared during fiscal 2014 , 2013 and 2012 totaled $ 487 million , $ 469 million and $ 438 million , respectively .applied currently anticipates that it will continue to pay cash dividends on a quarterly basis in the future , although the declaration and amount of any future cash dividends are at the discretion of the board of directors and will depend on applied 2019s financial condition , results of operations , capital requirements , business conditions and other factors , as well as a determination that cash dividends are in the best interests of applied 2019s stockholders .$ 100 invested on 10/25/09 in stock or 10/31/09 in index , including reinvestment of dividends .indexes calculated on month-end basis .and the rdg semiconductor composite index 183145 97 102 121 132 10/25/09 10/31/10 10/30/11 10/28/12 10/27/13 10/26/14 applied materials , inc .s&p 500 rdg semiconductor composite .
+CREATE TABLE AMAT/2014/page_37.pdf(
+	row_id int,
+	name text,
+	10/25/2009 text,
+	10/31/2010 text,
+	10/30/2011 text,
+	10/28/2012 text,
+	10/27/2013 text,
+	10/26/2014 text)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	name	10/25/2009	10/31/2010	10/30/2011 10/28/2012 10/27/2013 10/26/2014
+0	applied materials	100.00 97.43 101.85 88.54 151.43 183.29
+1	s&p 500 index	100.00 116.52 125.94 145.09 184.52 216.39
+2	rdg semiconductor composite index	100.00 121.00 132.42 124.95 163.20 207.93
+*/
+Q: how much more return was given for investing in the overall market rather than applied materials from 2009 to 2014 ? ( in a percentage )
+A: （216.39 - 100） - （183.29 - 100）
+
+
+pre text: interest rate to a variable interest rate based on the three-month libor plus 2.05% ( 2.05 % ) ( 2.34% ( 2.34 % ) as of october 31 , 2009 ) .if libor changes by 100 basis points , our annual interest expense would change by $ 3.8 million .foreign currency exposure as more fully described in note 2i .in the notes to consolidated financial statements contained in item 8 of this annual report on form 10-k , we regularly hedge our non-u.s .dollar-based exposures by entering into forward foreign currency exchange contracts .the terms of these contracts are for periods matching the duration of the underlying exposure and generally range from one month to twelve months .currently , our largest foreign currency exposure is the euro , primarily because our european operations have the highest proportion of our local currency denominated expenses .relative to foreign currency exposures existing at october 31 , 2009 and november 1 , 2008 , a 10% ( 10 % ) unfavorable movement in foreign currency exchange rates over the course of the year would not expose us to significant losses in earnings or cash flows because we hedge a high proportion of our year-end exposures against fluctuations in foreign currency exchange rates .the market risk associated with our derivative instruments results from currency exchange rate or interest rate movements that are expected to offset the market risk of the underlying transactions , assets and liabilities being hedged .the counterparties to the agreements relating to our foreign exchange instruments consist of a number of major international financial institutions with high credit ratings .we do not believe that there is significant risk of nonperformance by these counterparties because we continually monitor the credit ratings of such counterparties .while the contract or notional amounts of derivative financial instruments provide one measure of the volume of these transactions , they do not represent the amount of our exposure to credit risk .the amounts potentially subject to credit risk ( arising from the possible inability of counterparties to meet the terms of their contracts ) are generally limited to the amounts , if any , by which the counterparties 2019 obligations under the contracts exceed our obligations to the counterparties .the following table illustrates the effect that a 10% ( 10 % ) unfavorable or favorable movement in foreign currency exchange rates , relative to the u.s .dollar , would have on the fair value of our forward exchange contracts as of october 31 , 2009 and november 1 , 2008:
+post text: fair value of forward exchange contracts after a 10% ( 10 % ) unfavorable movement in foreign currency exchange rates asset ( liability ) .$ 20132 $ ( 9457 ) fair value of forward exchange contracts after a 10% ( 10 % ) favorable movement in foreign currency exchange rates liability .$ ( 6781 ) $ ( 38294 ) the calculation assumes that each exchange rate would change in the same direction relative to the u.s .dollar .in addition to the direct effects of changes in exchange rates , such changes typically affect the volume of sales or the foreign currency sales price as competitors 2019 products become more or less attractive .our sensitivity analysis of the effects of changes in foreign currency exchange rates does not factor in a potential change in sales levels or local currency selling prices.
+CREATE TABLE ADI/2009/page_49.pdf(
+	row_id int,
+	name text,
+	october 31 2009 text,
+	november 1 2008
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	name	october 31 2009	november 1 2008
+0	fair value of forward exchange contracts asset (liability) $ 6427 $ -23158 ( 23158 )
+1	fair value of forward exchange contracts after a 10% unfavorable movement in foreign currency exchange rates asset (liability) $ 20132 $ -9457 ( 9457 )
+2	fair value of forward exchange contracts after a 10% favorable movement in foreign currency exchange rates liability $ -6781 ( 6781 ) $ -38294 ( 38294 )
+*/
+Q: what is the the interest expense in 2009?
+A: 3.8
+
+
+pre text: the company entered into agreements with various governmental entities in the states of kentucky , georgia and tennessee to implement tax abatement plans related to its distribution center in franklin , kentucky ( simpson county ) , its distribution center in macon , georgia ( bibb county ) , and its store support center in brentwood , tennessee ( williamson county ). the tax abatement plans provide for reduction of real property taxes for specified time frames by legally transferring title to its real property in exchange for industrial revenue bonds .this property was then leased back to the company .no cash was exchanged .the lease payments are equal to the amount of the payments on the bonds .the tax abatement period extends through the term of the lease , which coincides with the maturity date of the bonds .at any time , the company has the option to purchase the real property by paying off the bonds , plus $ 1 .the terms and amounts authorized and drawn under each industrial revenue bond agreement are outlined as follows , as of december 30 , 2017 : bond term bond authorized amount ( in millions ) amount drawn ( in millions ) .
+post text: due to the form of these transactions , the company has not recorded the bonds or the lease obligation associated with the sale lease-back transaction .the original cost of the company 2019s property and equipment is recorded on the balance sheet and is being depreciated over its estimated useful life .capitalized software costs the company capitalizes certain costs related to the acquisition and development of software and amortizes these costs using the straight-line method over the estimated useful life of the software , which is three to five years .computer software consists of software developed for internal use and third-party software purchased for internal use .a subsequent addition , modification or upgrade to internal-use software is capitalized to the extent that it enhances the software 2019s functionality or extends its useful life .these costs are included in computer software and hardware in the accompanying consolidated balance sheets .certain software costs not meeting the criteria for capitalization are expensed as incurred .store closing costs the company regularly evaluates the performance of its stores and periodically closes those that are under-performing .the company records a liability for costs associated with an exit or disposal activity when the liability is incurred , usually in the period the store closes .store closing costs were not significant to the results of operations for any of the fiscal years presented .leases assets under capital leases are amortized in accordance with the company 2019s normal depreciation policy for owned assets or over the lease term , if shorter , and the related charge to operations is included in depreciation expense in the consolidated statements of income .certain operating leases include rent increases during the lease term .for these leases , the company recognizes the related rental expense on a straight-line basis over the term of the lease ( which includes the pre-opening period of construction , renovation , fixturing and merchandise placement ) and records the difference between the expense charged to operations and amounts paid as a deferred rent liability .the company occasionally receives reimbursements from landlords to be used towards improving the related store to be leased .leasehold improvements are recorded at their gross costs , including items reimbursed by landlords .related reimbursements are deferred and amortized on a straight-line basis as a reduction of rent expense over the applicable lease term .note 2 - share-based compensation : share-based compensation includes stock option and restricted stock unit awards and certain transactions under the company 2019s espp .share-based compensation expense is recognized based on the grant date fair value of all stock option and restricted stock unit awards plus a discount on shares purchased by employees as a part of the espp .the discount under the espp represents the difference between the purchase date market value and the employee 2019s purchase price.
+CREATE TABLE TSCO/2017/page_68.pdf(
+	row_id int,
+	name text,
+	bond term text,
+	bond authorized amount ( in millions ) text,
+	amount drawn ( in millions ) text,
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	name	bond term	bond authorized amount ( in millions )	amount drawn ( in millions )
+0	franklin kentucky distribution center 30 years $ 54.0 $ 51.8
+1	macon georgia distribution center 15 years $ 58.0 $ 49.9
+2	brentwood tennessee store support center 10 years $ 78.0 $ 75.3
+*/
+Q: what was the total amount lost from the bond authorization to the withdrawn?
+A: (78.0 - 75.3) + (58.0 - 49.9) + (54.0 - 51.8)
+
+
+pre text: cdw corporation and subsidiaries notes to consolidated financial statements 2013 denominator was impacted by the common shares issued during both the ipo and the underwriters 2019 exercise in full of the overallotment option granted to them in connection with the ipo .because such common shares were issued on july 2 , 2013 and july 31 , 2013 , respectively , they are only partially reflected in the 2013 denominator .such shares will be fully reflected in the 2014 denominator .see note 9 for additional discussion of the ipo .the dilutive effect of outstanding restricted stock , restricted stock units , stock options and mpk plan units is reflected in the denominator for diluted earnings per share using the treasury stock method .the following is a reconciliation of basic shares to diluted shares:
+post text: for the years ended december 31 , 2013 , 2012 and 2011 , diluted earnings per share excludes the impact of 0.0 million , 0.0 million , and 4.3 million potential common shares , respectively , as their inclusion would have had an anti-dilutive effect .12 .deferred compensation plan on march 10 , 2010 , in connection with the company 2019s purchase of $ 28.5 million principal amount of its outstanding senior subordinated debt , the company established the restricted debt unit plan ( the 201crdu plan 201d ) , an unfunded nonqualified deferred compensation plan .the total number of rdus that can be granted under the rdu plan is 28500 .at december 31 , 2013 , 28500 rdus were outstanding .rdus that are outstanding vest daily on a pro rata basis over the three-year period from january 1 , 2012 ( or , if later , the date of hire or the date of a subsequent rdu grant ) through december 31 , 2014 .participants have no rights to the underlying debt .the total amount of compensation available to be paid under the rdu plan was initially to be based on two components , a principal component and an interest component .the principal component credits the rdu plan with a notional amount equal to the $ 28.5 million face value of the senior subordinated notes ( the 201cdebt pool 201d ) , together with certain redemption premium equivalents as noted below .the interest component credits the rdu plan with amounts equal to the interest that would have been earned on the debt pool from march 10 , 2010 through maturity on october 12 , 2017 , except as discussed below .interest amounts for 2010 and 2011 were deferred until 2012 , and thereafter , interest amounts were paid to participants semi-annually on the interest payment due dates .payments totaling $ 1.7 million and $ 1.3 million were made to participants under the rdu plan in april and october 2013 , respectively , in connection with the semi-annual interest payments due .the company used a portion of the ipo proceeds together with incremental borrowings to redeem $ 324.0 million of the total senior subordinated notes outstanding on august 1 , 2013 .in connection with the ipo and the partial redemption of the senior subordinated notes , the company amended the rdu plan to increase the retentive value of the plan .in accordance with the original terms of the rdu plan , the principal component of the rdus converted to a cash-denominated pool upon the redemption of the senior subordinated notes .in addition , the company added $ 1.4 million to the principal component in the year ended december 31 , 2013 as redemption premium equivalents in accordance with the terms of the rdu plan .under the terms of the amended rdu plan , upon the partial redemption of outstanding senior subordinated notes , the rdus ceased to accrue the proportionate related interest component credits .the .
+CREATE TABLE CDW/2013/page_106.pdf(
+	row_id int,
+	( in millions ) text,
+	years ended december 31 , 2013 text,
+	years ended december 31 , 2012 text,
+	years ended december 31 , 2011 text,
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	( in millions )	years ended december 31 , 2013	years ended december 31 , 2012 years ended december 31 , 2011
+0	weighted-average shares - basic 156.6 145.1 144.8
+1	effect of dilutive securities 2.1 0.7 0.1
+2	weighted-average shares - diluted 158.7 145.8 144.9
+*/
+Q: what was the average effect , in millions , of the dilutive securities in 2012-14?
+A: ((2.1 + 0.7) + 0.1) / 3
+
+
+pre text: corporate corporate expenses in 2016 benefited from the absence of transaction costs associated with the norcraft acquisition ( $ 15.1 million in 2015 ) .this benefit was offset by higher employee-related costs and lower defined benefit plan income .( in millions ) 2016 2015 .
+post text: ( a ) represents external costs directly related to the acquisition of norcraft and primarily includes expenditures for banking , legal , accounting and other similar services .in future periods the company may record , in the corporate segment , material expense or income associated with actuarial gains and losses arising from periodic remeasurement of our liabilities for defined benefit plans .at a minimum the company will remeasure its defined benefit plan liabilities in the fourth quarter of each year .remeasurements due to plan amendments and settlements may also occur in interim periods during the year .remeasurement of these liabilities attributable to updating our liability discount rates and expected return on assets may , in particular , result in material income or expense recognition .liquidity and capital resources our primary liquidity needs are to support working capital requirements , fund capital expenditures and service indebtedness , as well as to finance acquisitions , repurchase shares of our common stock and pay dividends to stockholders , as deemed appropriate .our principal sources of liquidity are cash on hand , cash flows from operating activities , availability under our credit facility and debt issuances in the capital markets .our operating income is generated by our subsidiaries .there are no restrictions on the ability of our subsidiaries to pay dividends or make other distributions to fortune brands .in december 2017 , our board of directors increased the quarterly cash dividend by 11% ( 11 % ) to $ 0.20 per share of our common stock .our board of directors will continue to evaluate dividend payment opportunities on a quarterly basis .there can be no assurance as to when and if future dividends will be paid , and at what level , because the payment of dividends is dependent on our financial condition , results of operations , cash flows , capital requirements and other factors deemed relevant by our board of directors .we periodically review our portfolio of brands and evaluate potential strategic transactions to increase shareholder value .however , we cannot predict whether or when we may enter into acquisitions , joint ventures or dispositions , make any purchases of shares of our common stock under our share repurchase program , or pay dividends , or what impact any such transactions could have on our results of operations , cash flows or financial condition , whether as a result of the issuance of debt or equity securities , or otherwise .our cash flows from operations , borrowing availability and overall liquidity are subject to certain risks and uncertainties , including those described in the section 201citem 1a .risk factors . 201d in june 2016 , the company amended and restated its credit agreement to combine and rollover the existing revolving credit facility and term loan into a new standalone $ 1.25 billion revolving credit facility .this amendment and restatement of the credit agreement was a non-cash transaction for the company .terms and conditions of the credit agreement , including the total commitment amount , essentially remained the same as under the 2011 credit agreement .the revolving credit facility will mature in june 2021 and borrowings thereunder will be used for general corporate purposes .on december 31 , 2017 and december 31 , 2016 , our outstanding borrowings under these facilities were $ 615.0 million and $ 540.0 million , respectively .at december 31 , 2017 and december 31 , 2016 , the current portion of long- term debt was zero .interest rates under the facility are variable based on libor at the time of the .
+CREATE TABLE FBHS/2017/page_46.pdf(
+	row_id int,
+	( in millions ) text,
+	2016 text,
+	2015 text
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	( in millions )	2016	2015
+0 general and administrative expense $ -80.9 ( 80.9 ) $ -70.1 ( 70.1 )
+1 defined benefit plan income 2.9 6.1
+2 defined benefit plan recognition of actuarial losses -1.9 ( 1.9 ) -2.5 ( 2.5 )
+3 norcraft transaction costs ( a ) 2014 -15.1 ( 15.1 )
+4 total corporate expenses $ -79.9 ( 79.9 ) $ -81.6 ( 81.6 )
+*/
+Q: in 2015 what was the ratio of the defined benefit plan income to defined benefit plan recognition of actuarial losses
+A: 6.1 / -2.5
+
+
+pre text: management 2019s discussion and analysis 130 jpmorgan chase & co./2013 annual report wholesale credit portfolio the wholesale credit environment remained favorable throughout 2013 driving an increase in commercial client activity .discipline in underwriting across all areas of lending continues to remain a key point of focus , consistent with evolving market conditions and the firm 2019s risk management activities .the wholesale portfolio is actively managed , in part by conducting ongoing , in-depth reviews of credit quality and of industry , product and client concentrations .during the year , wholesale criticized assets and nonperforming assets decreased from higher levels experienced in 2012 , including a reduction in nonaccrual loans by 39% ( 39 % ) .as of december 31 , 2013 , wholesale exposure ( primarily cib , cb and am ) increased by $ 13.7 billion from december 31 , 2012 , primarily driven by increases of $ 11.4 billion in lending-related commitments and $ 8.4 billion in loans reflecting increased client activity primarily in cb and am .these increases were partially offset by a $ 9.2 billion decrease in derivative receivables .derivative receivables decreased predominantly due to reductions in interest rate derivatives driven by an increase in interest rates and reductions in commodity derivatives due to market movements .the decreases were partially offset by an increase in equity derivatives driven by a rise in equity markets .wholesale credit portfolio december 31 , credit exposure nonperforming ( d ) .
+post text: receivables from customers and other ( b ) 26744 23648 2014 2014 total wholesale credit- related assets 414067 411814 1459 1956 lending-related commitments 446232 434814 206 355 total wholesale credit exposure $ 860299 $ 846628 $ 1665 $ 2311 credit portfolio management derivatives notional , net ( c ) $ ( 27996 ) $ ( 27447 ) $ ( 5 ) $ ( 25 ) liquid securities and other cash collateral held against derivatives ( 14435 ) ( 15201 ) na na ( a ) during 2013 , certain loans that resulted from restructurings that were previously classified as performing were reclassified as nonperforming loans .prior periods were revised to conform with the current presentation .( b ) receivables from customers and other primarily includes margin loans to prime and retail brokerage customers ; these are classified in accrued interest and accounts receivable on the consolidated balance sheets .( c ) represents the net notional amount of protection purchased and sold through credit derivatives used to manage both performing and nonperforming wholesale credit exposures ; these derivatives do not qualify for hedge accounting under u.s .gaap .excludes the synthetic credit portfolio .for additional information , see credit derivatives on pages 137 2013138 , and note 6 on pages 220 2013233 of this annual report .( d ) excludes assets acquired in loan satisfactions. .
+CREATE TABLE JPM/2013/page_124.pdf(
+	row_id int,
+	december 31 , ( in millions ) text,
+	december 31 , 2013 text,
+	december 31 , 2012 text,
+	2013 text,
+	2012 text
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	december 31 , ( in millions ) december 31 , 2013 december 31 , 2012 2013 2012
+0 loans retained $ 308263 $ 306222 $ 821 $ 1434
+1 loans held-for-sale 11290 4406 26 18
+2 loans at fair value ( a ) 2011 2555 197 265
+3 loans 2013 reported 321564 313183 1044 1717
+4 derivative receivables 65759 74983 415 239
+5 receivables from customers and other ( b ) 26744 23648 2014 2014
+6 total wholesale credit-related assets 414067 411814 1459 1956
+7 lending-related commitments 446232 434814 206 355
+8 total wholesale credit exposure $ 860299 $ 846628 $ 1665 $ 2311
+9 credit portfolio management derivatives notional net ( c ) $ -27996 ( 27996 ) $ -27447 ( 27447 ) $ -5 ( 5 ) $ -25 ( 25 )
+10 liquid securities and other cash collateral held against derivatives -14435 ( 14435 ) -15201 ( 15201 ) na na
+*/
+Q: what was the percentage change in total wholesale credit-related assets from 2012 to 2013?
+A: (414067 - 411814) / 411814
+
+
+pre text: as of december 31 , 2012 and 2011 , the estimated value of the company's uncertain tax positions were liabilities of $ 19 million and $ 6 million , respectively .assuming sustainment of these positions , the reversal of $ 1 million of the amounts accrued would favorably affect the company's effective federal income tax rate in future periods .accrued interest and penalties with respect to unrecognized tax benefits were $ 2 million and $ 3 million as of december 31 , 2012 and 2011 , respectively .during 2011 , the company recorded a reduction of $ 10 million to its liability for uncertain tax positions relating to tax periods prior to the spin-off for which northrop grumman is the primary obligor .during 2010 , northrop grumman reached final settlement with the irs and the u .s .congressional joint committee on taxation on the irs examination of northrop grumman's tax returns for the years 2004 through 2006 .as a result of this settlement , the company recognized tax benefits of $ 8 million as a reduction to the provision for income taxes .in connection with the settlement , the company also recorded a reduction of $ 10 million to its liability for uncertain tax positions , including previously accrued interest , of $ 2 million .the following table summarizes the tax years that are either currently under examination or remain open under the statute of limitations and subject to examination by the major tax jurisdictions in which the company operates: .
+post text: although the company believes it has adequately provided for all uncertain tax positions , amounts asserted by taxing authorities could be greater than the company's accrued position .accordingly , additional provisions on federal and state income tax related matters could be recorded in the future as revised estimates are made or the underlying matters are effectively settled or otherwise resolved .conversely , the company could settle positions with the tax authorities for amounts lower than have been accrued .the company believes it is reasonably possible that during the next 12 months the company's liability for uncertain tax positions may decrease by approximately $ 14 million .the company recognizes accrued interest and penalties related to uncertain tax positions in income tax expense .the irs is currently conducting an examination of northrop grumman's consolidated tax returns , of which hii was part , for the years 2007 through 2009 .open tax years related to state jurisdictions remain subject to examination .as of march 31 , 2011 , the date of the spin-off , the company's liability for uncertain tax positions was approximately $ 4 million , net of federal benefit , which related solely to state income tax positions .under the terms of the separation agreement , northrop grumman is obligated to reimburse hii for any settlement liabilities paid by hii to any government authority for tax periods prior to the spin-off , which include state income taxes .accordingly , the company has recorded a reimbursement receivable of approximately $ 4 million , net of federal benefit , in other assets related to uncertain tax positions for state income taxes as of the date of the spin-off .deferred income taxes - deferred income taxes reflect the net tax effects of temporary differences between the carrying amounts of assets and liabilities for financial reporting purposes and income tax purposes .such amounts are classified in the consolidated statements of financial position as current or non-current assets or liabilities based upon the classification of the related assets and liabilities.
+CREATE TABLE HII/2012/page_98.pdf(
+	row_id int,
+	jurisdiction united states text,
+	jurisdiction 2007 text,
+	jurisdiction - text,
+	2012 text,
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	jurisdiction united states	jurisdiction 2007	jurisdiction -	2012
+0 california 2007 - 2012
+1 louisiana 2007 - "2012
+2 mississippi 2009 - 2012
+3 virginia 2006 - 2012
+*/
+Q: how many years of tax examination is the company subject to in virginia?
+A: 2012 - 2006
+
+
+pre text: results of operations and the estimated fair value of acquired assets and assumed liabilities are recorded in the consolidated financial statements from the date of acquisition .pro forma results of operations for the business combinations completed during fiscal 2016 have not been presented because the effects of these acquisitions , individually and in the aggregate , would not have been material to cadence 2019s financial results .the fair values of acquired intangible assets and assumed liabilities were determined using significant inputs that are not observable in the market .for an additional description of these fair value calculations , see note 16 in the notes to the consolidated financial statements .a trust for the benefit of the children of lip-bu tan , cadence 2019s president , chief executive officer , or ceo , and director , owned less than 2% ( 2 % ) of rocketick technologies ltd. , one of the acquired companies , and mr . tan and his wife serve as co-trustees of the trust and disclaim pecuniary and economic interest in the trust .the board of directors of cadence reviewed the transaction and concluded that it was in the best interests of cadence to proceed with the transaction .mr .tan recused himself from the board of directors 2019 discussion of the valuation of rocketick technologies ltd .and on whether to proceed with the transaction .a financial advisor provided a fairness opinion to cadence in connection with the transaction .2014 acquisitions during fiscal 2014 , cadence acquired jasper design automation , inc. , or jasper , a privately held provider of formal analysis solutions based in mountain view , california .the acquired technology complements cadence 2019s existing system design and verification platforms .total cash consideration for jasper , after taking into account adjustments for certain costs , and cash held by jasper at closing of $ 28.7 million , was $ 139.4 million .cadence will also make payments to certain employees through the third quarter of fiscal 2017 subject to continued employment and other conditions .cadence also completed two other business combinations during fiscal 2014 for total cash consideration of $ 27.5 million , after taking into account cash acquired of $ 2.1 million .acquisition-related transaction costs transaction costs associated with acquisitions were $ 1.1 million , $ 0.7 million and $ 3.7 million during fiscal 2016 , 2015 and 2014 , respectively .these costs consist of professional fees and administrative costs and were expensed as incurred in cadence 2019s consolidated income statements .note 8 .goodwill and acquired intangibles goodwill the changes in the carrying amount of goodwill during fiscal 2016 and 2015 were as follows : gross carrying amount ( in thousands ) .
+post text: cadence completed its annual goodwill impairment test during the third quarter of fiscal 2016 and determined that the fair value of cadence 2019s single reporting unit substantially exceeded the carrying amount of its net assets and that no impairment existed. .
+CREATE TABLE CDNS/2016/page_76.pdf(
+	row_id int,
+	name text,
+	Gross CarryingAmount (In thousands) text,
+)
+/*
+All rows of the table:
+SELECT * FROM w;
+row_id	name	Gross CarryingAmount (In thousands)
+0 Balance as of January 3, 2015 $553,767
+1 Effect of foreign currency translation (1,995)
+2 Balance as of January 2, 2016 551,772
+3 Goodwill resulting from acquisitions 23,579
+4 Effect of foreign currency translation (2,587)
+5 Balance as of December 31, 2016 $572,764
+*/
+Q: what portion of the total carrying amount is generated by the goodwill from acquisitions?
+A: 23579 / 572764
